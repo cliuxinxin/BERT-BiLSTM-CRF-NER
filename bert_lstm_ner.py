@@ -447,7 +447,7 @@ def create_model(bert_config, is_training, input_ids, input_mask,
     blstm_crf = BLSTM_CRF(embedded_chars=embedding, hidden_unit=FLAGS.lstm_size, cell_type=FLAGS.cell, num_layers=FLAGS.num_layers,
                           dropout_rate=FLAGS.droupout_rate, initializers=initializers, num_labels=num_labels,
                           seq_length=max_seq_length, labels=labels, lengths=lengths, is_training=is_training)
-    rst = blstm_crf.add_blstm_crf_layer(crf_only=False)
+    rst = blstm_crf.add_blstm_crf_layer(crf_only=True)
     return rst
 
 
